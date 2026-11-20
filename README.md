@@ -1,6 +1,6 @@
 # Nimbus Exposure Ledger (v1)
 
-A standalone, board-ready **Physical Climate Risk Financial Exposure** web application built for **Meera Iyer**, Head of Sustainability at **Nimbus Cement Ltd** (a fictional listed Indian cement manufacturer with 9 plants).
+A standalone, board-ready **Physical Climate Risk Financial Exposure** web application built for, Head of Sustainability at **Nimbus Cement Ltd** (a fictional listed Indian cement manufacturer with 9 plants).
 
 > **Core Question Answered:** *"What is Nimbus Cement's business exposure to climate events today (FY 2025-26) and by 2040?"*
 
