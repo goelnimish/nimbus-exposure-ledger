@@ -1,0 +1,73 @@
+{
+  "run_id": "NIM-2026-11190753",
+  "retrieved_at": "2026-11-19T07:53:51Z",
+  "method_version": "1.0",
+  "sources": [
+    {
+      "id": "nimbus_csv",
+      "name": "Nimbus Cement Facility Master (nimbus_cement_plants.csv)",
+      "version": "FY 2025-26",
+      "resolution": "Plant level (9 facilities)",
+      "retrieved_at": "2026-11-19T07:53:51Z",
+      "url": "local://nimbus_cement_plants.csv",
+      "used_for": "Revenue, gross block, output, capacity, employees, water source, coastal flag, clinker flows",
+      "label": "Real",
+      "notes": "Fictional listed Indian cement company dataset provided for assessment; zero values altered."
+    },
+    {
+      "id": "open_meteo_era5",
+      "name": "Open-Meteo Historical Weather API (ERA5 Reanalysis)",
+      "version": "ERA5 / ERA5-Land",
+      "resolution": "~11\u201325 km grid",
+      "retrieved_at": "2026-11-19T07:53:51Z",
+      "url": "https://open-meteo.com/en/docs/historical-weather-api",
+      "used_for": "Observed baseline (2005\u20132024) daily Tmax \u226540\u00b0C, \u226545\u00b0C, Rx1day, and \u226564.5 mm heavy rain days for all 9 plants",
+      "label": "Real",
+      "notes": "Direct batched API pull for all 9 plant coordinates in Asia/Kolkata timezone."
+    },
+    {
+      "id": "open_meteo_cmip6",
+      "name": "Open-Meteo Climate Change API (CMIP6 HighResMIP)",
+      "version": "4-model high-res ensemble (EC_Earth3P_HR, MRI_AGCM3_2_S, MPI_ESM1_2_XR, CMCC_CM2_VHR4)",
+      "resolution": "10\u201350 km high-resolution models",
+      "retrieved_at": "2026-11-19T07:53:51Z",
+      "url": "https://open-meteo.com/en/docs/climate-api",
+      "used_for": "Delta-change future projections (observed ERA5 baseline + model future minus model baseline) for Heat & Extreme Rain",
+      "label": "Modelled",
+      "notes": "Direct API pull for all 9 plant coordinates (P01\u2013P09) across 4 HighResMIP models. SSP2-4.5 & SSP1-2.6 scaled via IPCC AR6 warming ratios (A11)."
+    },
+    {
+      "id": "open_meteo_flood",
+      "name": "Open-Meteo Flood API (GloFAS v4)",
+      "version": "GloFAS v4 (1984\u20132024)",
+      "resolution": "5 km river network grid",
+      "retrieved_at": "2026-11-19T07:53:51Z",
+      "url": "https://open-meteo.com/en/docs/flood-api",
+      "used_for": "Baseline 1-in-25-year river discharge (m\u00b3/s) for river/canal plants P03 (Wardha), P06 (Mahanadi canal), P09 (Damodar)",
+      "label": "Real",
+      "notes": "Future discharge ratio scaled from site-level CMIP6 Rx1day change; coarse grid flat-terrain caveat applies."
+    },
+    {
+      "id": "wri_aqueduct",
+      "name": "WRI Aqueduct 4.0 Water Risk Atlas",
+      "version": "4.0 (HydroBASINS Level 6)",
+      "resolution": "Sub-basin level",
+      "retrieved_at": "2026-11-19T07:53:51Z",
+      "url": "https://www.wri.org/aqueduct",
+      "used_for": "Baseline, 2030, and 2050 baseline water stress (BWS) index; 2040 linearly interpolated",
+      "label": "Modelled",
+      "notes": "Basin-level context qualified by plant water_source; P07 uses desalinated seawater (decoupled from freshwater stress)."
+    },
+    {
+      "id": "noaa_ibtracs",
+      "name": "NOAA IBTrACS v04r01 (North Indian Ocean)",
+      "version": "v04r01 (1980\u20132024)",
+      "resolution": "Exact storm track points within 200 km radius",
+      "retrieved_at": "2026-11-19T07:53:51Z",
+      "url": "https://www.ncei.noaa.gov/products/international-best-track-archive",
+      "used_for": "Historical tropical cyclone tracks per decade within 200 km for coastal plants P07 (Mundra: 24 storms / 5.3 per decade) and P08 (Paradip: 101 storms / 22.4 per decade)",
+      "label": "Real",
+      "notes": "Historical observed track frequency only; future cyclone frequency is not projected (Assumption A10)."
+    }
+  ]
+}

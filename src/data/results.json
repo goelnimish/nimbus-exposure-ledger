@@ -1,0 +1,4425 @@
+{
+  "meta": {
+    "run_id": "NIM-2026-11190753",
+    "generated_at": "2026-11-19T07:53:51Z",
+    "method_version": "1.0",
+    "company": "Nimbus Cement Ltd",
+    "fiscal_year": "FY 2025-26",
+    "scope": "Physical climate risk only (acute & chronic). Transition risk (CCTS, carbon pricing) excluded in v1.",
+    "windows": {
+      "today": "2005\u20132024 (ERA5 observed)",
+      "2030": "2021\u20132040 (20-yr window)",
+      "2040": "2031\u20132050 (20-yr window)",
+      "2050": "2041\u20132050 (HighResMIP end window)"
+    },
+    "models": [
+      "EC_Earth3P_HR",
+      "MRI_AGCM3_2_S",
+      "MPI_ESM1_2_XR",
+      "CMCC_CM2_VHR4"
+    ],
+    "default_thresholds": {
+      "heat_high": 30,
+      "heat_very_high": 60,
+      "rain_high": 95,
+      "rain_very_high": 124.5,
+      "water_high": 3.0,
+      "water_very_high": 4.0,
+      "river_high": 1.1,
+      "river_very_high": 1.2,
+      "coastal_high": 5.0,
+      "coastal_very_high": 8.0
+    }
+  },
+  "plants": [
+    {
+      "id": "P01",
+      "name": "Nimbus Chittorgarh Works",
+      "town": "Chittorgarh",
+      "state": "Rajasthan",
+      "lat": 24.8887,
+      "lon": 74.6269,
+      "type": "Integrated",
+      "water_source": "Groundwater",
+      "water_basin": "Chambal / Banas (Rajasthan)",
+      "water_note": "Direct groundwater extraction (Groundwater) \u2014 high sensitivity to basin-level depletion.",
+      "coastal": false,
+      "notes": "Captive limestone mine; 40 MW captive coal power plant (its emissions are in scope1); ships clinker to P07 by rail",
+      "cmip6_source_note": "Direct Open-Meteo CMIP6 HighResMIP 4-model ensemble",
+      "denominators": {
+        "revenue_inr_cr": 1749.0,
+        "gross_block_inr_cr": 3200.0,
+        "output_mt": 3.3,
+        "people": 820,
+        "capacity_mtpa": 4.0,
+        "clinker_produced_mt": 3.43,
+        "clinker_shipped_mt": 1.12,
+        "scope1_co2_kt": 3125.0
+      },
+      "hazards": {
+        "heat": {
+          "applicable": true,
+          "metric": "days_tmax_ge_40",
+          "unit": "days/yr",
+          "today": {
+            "value": 33.9,
+            "days_45": 0.5,
+            "rating": 4,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 35.9,
+                "min": 32.2,
+                "max": 38.4,
+                "days_45_median": 0.9,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 37.5,
+                "min": 35.5,
+                "max": 40.3,
+                "days_45_median": 1.6,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 38.0,
+                "min": 33.5,
+                "max": 40.6,
+                "days_45_median": 2.0,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 36.1,
+                "min": 32.0,
+                "max": 38.9,
+                "days_45_median": 0.9,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 38.5,
+                "min": 35.9,
+                "max": 41.8,
+                "days_45_median": 1.8,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 39.7,
+                "min": 33.4,
+                "max": 43.2,
+                "days_45_median": 2.6,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 36.4,
+                "min": 31.8,
+                "max": 39.4,
+                "days_45_median": 1.0,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 39.5,
+                "min": 36.4,
+                "max": 43.8,
+                "days_45_median": 2.1,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 41.9,
+                "min": 33.2,
+                "max": 46.8,
+                "days_45_median": 3.4,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "rain": {
+          "applicable": true,
+          "metric": "rx1day_mm",
+          "unit": "mm/day",
+          "today": {
+            "value": 92.9,
+            "days_64_5": 1.15,
+            "rating": 3,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 94.2,
+                "min": 88.6,
+                "max": 96.1,
+                "days_64_5_median": 1.17,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 91.7,
+                "min": 80.0,
+                "max": 94.4,
+                "days_64_5_median": 1.15,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 91.2,
+                "min": 78.9,
+                "max": 95.8,
+                "days_64_5_median": 1.17,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 94.4,
+                "min": 88.2,
+                "max": 96.4,
+                "days_64_5_median": 1.17,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 91.3,
+                "min": 77.1,
+                "max": 94.7,
+                "days_64_5_median": 1.15,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 90.5,
+                "min": 73.5,
+                "max": 96.9,
+                "days_64_5_median": 1.17,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 94.5,
+                "min": 87.7,
+                "max": 96.8,
+                "days_64_5_median": 1.17,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 91.0,
+                "min": 73.1,
+                "max": 95.2,
+                "days_64_5_median": 1.15,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 89.6,
+                "min": 66.0,
+                "max": 98.4,
+                "days_64_5_median": 1.18,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "water": {
+          "applicable": true,
+          "metric": "aqueduct_bws_score",
+          "unit": "0-5 index",
+          "basin": "Chambal / Banas (Rajasthan)",
+          "decoupled_freshwater": false,
+          "today": {
+            "value": 4.45,
+            "rating": 5,
+            "label": "Modelled"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 4.55,
+                "min": 4.3,
+                "max": 4.8,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 4.6,
+                "min": 4.35,
+                "max": 4.85,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 4.65,
+                "min": 4.4,
+                "max": 4.9,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 4.68,
+                "min": 4.43,
+                "max": 4.93,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 4.78,
+                "min": 4.53,
+                "max": 5.0,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 4.88,
+                "min": 4.63,
+                "max": 5.0,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 4.78,
+                "min": 4.53,
+                "max": 5.0,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 4.89,
+                "min": 4.64,
+                "max": 5.0,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 5.0,
+                "min": 4.75,
+                "max": 5.0,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "river": {
+          "applicable": false,
+          "reason": "Not on a major river/canal intake (Groundwater); riverine flood module applies to P03 (Wardha), P06 (Mahanadi canal), and P09 (Damodar)."
+        },
+        "coastal": {
+          "applicable": false,
+          "reason": "Inland plant (coastal = N); coastal storm module applies only to coastal units P07 (Mundra) and P08 (Paradip)."
+        }
+      }
+    },
+    {
+      "id": "P02",
+      "name": "Nimbus Satna Works",
+      "town": "Satna",
+      "state": "Madhya Pradesh",
+      "lat": 24.6005,
+      "lon": 80.8322,
+      "type": "Integrated",
+      "water_source": "Reservoir",
+      "water_basin": "Tons / Ganga (Madhya Pradesh)",
+      "water_note": "Surface/utility intake (Reservoir) \u2014 exposed to seasonal basin allocation and drought curtailment.",
+      "coastal": false,
+      "notes": "Captive limestone mine",
+      "cmip6_source_note": "Direct Open-Meteo CMIP6 HighResMIP 4-model ensemble",
+      "denominators": {
+        "revenue_inr_cr": 1511.0,
+        "gross_block_inr_cr": 2700.0,
+        "output_mt": 2.85,
+        "people": 760,
+        "capacity_mtpa": 3.5,
+        "clinker_produced_mt": 2.05,
+        "clinker_shipped_mt": 0.0,
+        "scope1_co2_kt": 1720.0
+      },
+      "hazards": {
+        "heat": {
+          "applicable": true,
+          "metric": "days_tmax_ge_40",
+          "unit": "days/yr",
+          "today": {
+            "value": 38.2,
+            "days_45": 0.5,
+            "rating": 4,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 36.4,
+                "min": 33.7,
+                "max": 38.1,
+                "days_45_median": 0.2,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 39.5,
+                "min": 39.1,
+                "max": 41.9,
+                "days_45_median": 1.8,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 40.8,
+                "min": 37.3,
+                "max": 44.0,
+                "days_45_median": 2.4,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 36.1,
+                "min": 33.2,
+                "max": 38.1,
+                "days_45_median": 0.2,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 39.9,
+                "min": 39.3,
+                "max": 42.8,
+                "days_45_median": 2.1,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 41.8,
+                "min": 36.9,
+                "max": 46.2,
+                "days_45_median": 3.1,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 35.9,
+                "min": 32.7,
+                "max": 38.1,
+                "days_45_median": 0.2,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 40.2,
+                "min": 39.6,
+                "max": 43.9,
+                "days_45_median": 2.6,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 43.3,
+                "min": 36.4,
+                "max": 49.3,
+                "days_45_median": 4.2,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "rain": {
+          "applicable": true,
+          "metric": "rx1day_mm",
+          "unit": "mm/day",
+          "today": {
+            "value": 67.3,
+            "days_64_5": 0.8,
+            "rating": 3,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 71.1,
+                "min": 68.3,
+                "max": 125.8,
+                "days_64_5_median": 0.9,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 66.6,
+                "min": 65.5,
+                "max": 117.5,
+                "days_64_5_median": 0.8,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 70.1,
+                "min": 65.1,
+                "max": 94.6,
+                "days_64_5_median": 0.79,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 71.5,
+                "min": 68.4,
+                "max": 132.2,
+                "days_64_5_median": 0.92,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 66.5,
+                "min": 65.1,
+                "max": 129.1,
+                "days_64_5_median": 0.8,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 71.2,
+                "min": 64.3,
+                "max": 105.1,
+                "days_64_5_median": 0.78,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 71.9,
+                "min": 68.5,
+                "max": 138.6,
+                "days_64_5_median": 0.93,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 66.2,
+                "min": 64.6,
+                "max": 144.6,
+                "days_64_5_median": 0.8,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 72.7,
+                "min": 63.1,
+                "max": 119.8,
+                "days_64_5_median": 0.78,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "water": {
+          "applicable": true,
+          "metric": "aqueduct_bws_score",
+          "unit": "0-5 index",
+          "basin": "Tons / Ganga (Madhya Pradesh)",
+          "decoupled_freshwater": false,
+          "today": {
+            "value": 3.42,
+            "rating": 4,
+            "label": "Modelled"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 3.55,
+                "min": 3.3,
+                "max": 3.8,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 3.62,
+                "min": 3.37,
+                "max": 3.87,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 3.68,
+                "min": 3.43,
+                "max": 3.93,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 3.72,
+                "min": 3.47,
+                "max": 3.97,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 3.87,
+                "min": 3.62,
+                "max": 4.12,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 4.02,
+                "min": 3.77,
+                "max": 4.27,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 3.85,
+                "min": 3.6,
+                "max": 4.1,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 4.08,
+                "min": 3.83,
+                "max": 4.33,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 4.3,
+                "min": 4.05,
+                "max": 4.55,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "river": {
+          "applicable": false,
+          "reason": "Not on a major river/canal intake (Reservoir); riverine flood module applies to P03 (Wardha), P06 (Mahanadi canal), and P09 (Damodar)."
+        },
+        "coastal": {
+          "applicable": false,
+          "reason": "Inland plant (coastal = N); coastal storm module applies only to coastal units P07 (Mundra) and P08 (Paradip)."
+        }
+      }
+    },
+    {
+      "id": "P03",
+      "name": "Nimbus Chandrapur Works",
+      "town": "Chandrapur",
+      "state": "Maharashtra",
+      "lat": 19.9615,
+      "lon": 79.2961,
+      "type": "Integrated",
+      "water_source": "River (Wardha)",
+      "water_basin": "Wardha / Godavari (Maharashtra)",
+      "water_note": "Surface/utility intake (River (Wardha)) \u2014 exposed to seasonal basin allocation and drought curtailment.",
+      "coastal": false,
+      "notes": "30 MW waste-heat recovery system",
+      "cmip6_source_note": "Direct Open-Meteo CMIP6 HighResMIP 4-model ensemble",
+      "denominators": {
+        "revenue_inr_cr": 1248.0,
+        "gross_block_inr_cr": 2300.0,
+        "output_mt": 2.4,
+        "people": 690,
+        "capacity_mtpa": 3.0,
+        "clinker_produced_mt": 1.78,
+        "clinker_shipped_mt": 0.0,
+        "scope1_co2_kt": 1510.0
+      },
+      "hazards": {
+        "heat": {
+          "applicable": true,
+          "metric": "days_tmax_ge_40",
+          "unit": "days/yr",
+          "today": {
+            "value": 51.0,
+            "days_45": 0.7,
+            "rating": 4,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 47.7,
+                "min": 43.8,
+                "max": 52.5,
+                "days_45_median": 0.7,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 51.2,
+                "min": 44.3,
+                "max": 55.0,
+                "days_45_median": 2.9,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 52.8,
+                "min": 47.1,
+                "max": 55.6,
+                "days_45_median": 3.8,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 47.3,
+                "min": 43.0,
+                "max": 52.6,
+                "days_45_median": 0.7,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 51.2,
+                "min": 42.8,
+                "max": 55.9,
+                "days_45_median": 3.4,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 53.5,
+                "min": 45.6,
+                "max": 57.4,
+                "days_45_median": 5.0,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 47.0,
+                "min": 42.2,
+                "max": 52.8,
+                "days_45_median": 0.8,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 51.2,
+                "min": 40.7,
+                "max": 57.1,
+                "days_45_median": 4.0,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 54.5,
+                "min": 43.5,
+                "max": 59.9,
+                "days_45_median": 6.6,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "rain": {
+          "applicable": true,
+          "metric": "rx1day_mm",
+          "unit": "mm/day",
+          "today": {
+            "value": 119.1,
+            "days_64_5": 2.45,
+            "rating": 4,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 127.3,
+                "min": 120.7,
+                "max": 151.6,
+                "days_64_5_median": 2.61,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 129.9,
+                "min": 119.1,
+                "max": 163.2,
+                "days_64_5_median": 2.63,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 126.3,
+                "min": 121.4,
+                "max": 158.1,
+                "days_64_5_median": 2.58,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 128.2,
+                "min": 120.8,
+                "max": 155.1,
+                "days_64_5_median": 2.63,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 132.3,
+                "min": 119.1,
+                "max": 173.4,
+                "days_64_5_median": 2.67,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 129.1,
+                "min": 122.3,
+                "max": 173.1,
+                "days_64_5_median": 2.63,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 129.2,
+                "min": 121.0,
+                "max": 158.7,
+                "days_64_5_median": 2.65,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 135.7,
+                "min": 119.1,
+                "max": 187.0,
+                "days_64_5_median": 2.72,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 132.9,
+                "min": 123.5,
+                "max": 194.1,
+                "days_64_5_median": 2.7,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "water": {
+          "applicable": true,
+          "metric": "aqueduct_bws_score",
+          "unit": "0-5 index",
+          "basin": "Wardha / Godavari (Maharashtra)",
+          "decoupled_freshwater": false,
+          "today": {
+            "value": 2.85,
+            "rating": 3,
+            "label": "Modelled"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 2.98,
+                "min": 2.73,
+                "max": 3.23,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 3.05,
+                "min": 2.8,
+                "max": 3.3,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 3.12,
+                "min": 2.87,
+                "max": 3.37,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 3.18,
+                "min": 2.93,
+                "max": 3.43,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 3.34,
+                "min": 3.09,
+                "max": 3.59,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 3.5,
+                "min": 3.25,
+                "max": 3.75,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 3.3,
+                "min": 3.05,
+                "max": 3.55,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 3.56,
+                "min": 3.31,
+                "max": 3.81,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 3.82,
+                "min": 3.57,
+                "max": 4.07,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "river": {
+          "applicable": true,
+          "metric": "q25_discharge_ratio",
+          "unit": "ratio vs baseline",
+          "today": {
+            "value": 1.0,
+            "q25_m3s": 49.4,
+            "mean_annual_peak_m3s": 22.4,
+            "rating": 2,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 1.07,
+                "min": 1.01,
+                "max": 1.27,
+                "q25_projected_m3s": 52.9,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 1.09,
+                "min": 1.0,
+                "max": 1.37,
+                "q25_projected_m3s": 53.8,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 1.06,
+                "min": 1.02,
+                "max": 1.33,
+                "q25_projected_m3s": 52.4,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 1.08,
+                "min": 1.01,
+                "max": 1.3,
+                "q25_projected_m3s": 53.4,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 1.11,
+                "min": 1.0,
+                "max": 1.46,
+                "q25_projected_m3s": 54.8,
+                "rating": 4,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 1.08,
+                "min": 1.03,
+                "max": 1.45,
+                "q25_projected_m3s": 53.4,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 1.08,
+                "min": 1.02,
+                "max": 1.33,
+                "q25_projected_m3s": 53.4,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 1.14,
+                "min": 1.0,
+                "max": 1.57,
+                "q25_projected_m3s": 56.3,
+                "rating": 4,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 1.12,
+                "min": 1.04,
+                "max": 1.63,
+                "q25_projected_m3s": 55.3,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "coastal": {
+          "applicable": false,
+          "reason": "Inland plant (coastal = N); coastal storm module applies only to coastal units P07 (Mundra) and P08 (Paradip)."
+        }
+      }
+    },
+    {
+      "id": "P04",
+      "name": "Nimbus Nalgonda Works",
+      "town": "Nalgonda",
+      "state": "Telangana",
+      "lat": 17.0575,
+      "lon": 79.2671,
+      "type": "Integrated",
+      "water_source": "Groundwater",
+      "water_basin": "Lower Krishna (Telangana)",
+      "water_note": "Direct groundwater extraction (Groundwater) \u2014 high sensitivity to basin-level depletion.",
+      "coastal": false,
+      "notes": "",
+      "cmip6_source_note": "Direct Open-Meteo CMIP6 HighResMIP 4-model ensemble",
+      "denominators": {
+        "revenue_inr_cr": 999.0,
+        "gross_block_inr_cr": 1800.0,
+        "output_mt": 1.85,
+        "people": 540,
+        "capacity_mtpa": 2.5,
+        "clinker_produced_mt": 1.22,
+        "clinker_shipped_mt": 0.0,
+        "scope1_co2_kt": 1025.0
+      },
+      "hazards": {
+        "heat": {
+          "applicable": true,
+          "metric": "days_tmax_ge_40",
+          "unit": "days/yr",
+          "today": {
+            "value": 23.0,
+            "days_45": 0.1,
+            "rating": 3,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 24.2,
+                "min": 20.5,
+                "max": 32.7,
+                "days_45_median": 0.6,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 27.3,
+                "min": 23.0,
+                "max": 32.5,
+                "days_45_median": 1.3,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 26.9,
+                "min": 25.3,
+                "max": 32.7,
+                "days_45_median": 1.1,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 24.3,
+                "min": 20.3,
+                "max": 33.7,
+                "days_45_median": 0.7,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 28.3,
+                "min": 23.0,
+                "max": 34.7,
+                "days_45_median": 1.5,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 28.4,
+                "min": 26.2,
+                "max": 36.4,
+                "days_45_median": 1.4,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 24.5,
+                "min": 20.0,
+                "max": 34.8,
+                "days_45_median": 0.7,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 29.6,
+                "min": 23.0,
+                "max": 37.6,
+                "days_45_median": 1.9,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 30.5,
+                "min": 27.4,
+                "max": 41.6,
+                "days_45_median": 2.0,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "rain": {
+          "applicable": true,
+          "metric": "rx1day_mm",
+          "unit": "mm/day",
+          "today": {
+            "value": 67.3,
+            "days_64_5": 0.75,
+            "rating": 3,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 68.7,
+                "min": 37.0,
+                "max": 75.1,
+                "days_64_5_median": 0.77,
+                "rating": 3,
+                "rating_range": [
+                  1,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 72.3,
+                "min": 60.0,
+                "max": 77.3,
+                "days_64_5_median": 0.84,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 73.8,
+                "min": 64.9,
+                "max": 79.7,
+                "days_64_5_median": 0.86,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 68.8,
+                "min": 33.7,
+                "max": 75.9,
+                "days_64_5_median": 0.78,
+                "rating": 3,
+                "rating_range": [
+                  1,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 73.5,
+                "min": 58.3,
+                "max": 79.6,
+                "days_64_5_median": 0.87,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 76.2,
+                "min": 64.0,
+                "max": 84.4,
+                "days_64_5_median": 0.91,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 69.0,
+                "min": 30.4,
+                "max": 76.8,
+                "days_64_5_median": 0.78,
+                "rating": 3,
+                "rating_range": [
+                  1,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 75.0,
+                "min": 56.1,
+                "max": 82.7,
+                "days_64_5_median": 0.9,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 79.8,
+                "min": 62.7,
+                "max": 91.1,
+                "days_64_5_median": 0.98,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "water": {
+          "applicable": true,
+          "metric": "aqueduct_bws_score",
+          "unit": "0-5 index",
+          "basin": "Lower Krishna (Telangana)",
+          "decoupled_freshwater": false,
+          "today": {
+            "value": 3.88,
+            "rating": 4,
+            "label": "Modelled"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 4.0,
+                "min": 3.75,
+                "max": 4.25,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 4.07,
+                "min": 3.82,
+                "max": 4.32,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 4.14,
+                "min": 3.89,
+                "max": 4.39,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 4.18,
+                "min": 3.93,
+                "max": 4.43,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 4.33,
+                "min": 4.08,
+                "max": 4.58,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 4.48,
+                "min": 4.23,
+                "max": 4.73,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 4.32,
+                "min": 4.07,
+                "max": 4.57,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 4.54,
+                "min": 4.29,
+                "max": 4.79,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 4.76,
+                "min": 4.51,
+                "max": 5.0,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "river": {
+          "applicable": false,
+          "reason": "Not on a major river/canal intake (Groundwater); riverine flood module applies to P03 (Wardha), P06 (Mahanadi canal), and P09 (Damodar)."
+        },
+        "coastal": {
+          "applicable": false,
+          "reason": "Inland plant (coastal = N); coastal storm module applies only to coastal units P07 (Mundra) and P08 (Paradip)."
+        }
+      }
+    },
+    {
+      "id": "P05",
+      "name": "Nimbus Ariyalur Works",
+      "town": "Ariyalur",
+      "state": "Tamil Nadu",
+      "lat": 11.1401,
+      "lon": 79.0786,
+      "type": "Integrated",
+      "water_source": "Groundwater",
+      "water_basin": "Cauvery / Vellar (Tamil Nadu)",
+      "water_note": "Direct groundwater extraction (Groundwater) \u2014 high sensitivity to basin-level depletion.",
+      "coastal": false,
+      "notes": "Oldest kiln (1998)",
+      "cmip6_source_note": "Direct Open-Meteo CMIP6 HighResMIP 4-model ensemble",
+      "denominators": {
+        "revenue_inr_cr": 868.0,
+        "gross_block_inr_cr": 1500.0,
+        "output_mt": 1.55,
+        "people": 480,
+        "capacity_mtpa": 2.0,
+        "clinker_produced_mt": 1.12,
+        "clinker_shipped_mt": 0.0,
+        "scope1_co2_kt": 1005.0
+      },
+      "hazards": {
+        "heat": {
+          "applicable": true,
+          "metric": "days_tmax_ge_40",
+          "unit": "days/yr",
+          "today": {
+            "value": 11.8,
+            "days_45": 0.0,
+            "rating": 3,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 16.2,
+                "min": 12.1,
+                "max": 23.3,
+                "days_45_median": 0.0,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 17.1,
+                "min": 15.3,
+                "max": 21.1,
+                "days_45_median": 0.2,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 16.1,
+                "min": 13.5,
+                "max": 21.1,
+                "days_45_median": 0.2,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 16.6,
+                "min": 12.2,
+                "max": 24.5,
+                "days_45_median": 0.0,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 18.4,
+                "min": 16.1,
+                "max": 23.2,
+                "days_45_median": 0.3,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 17.8,
+                "min": 14.1,
+                "max": 24.7,
+                "days_45_median": 0.2,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 17.1,
+                "min": 12.2,
+                "max": 25.8,
+                "days_45_median": 0.0,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 20.0,
+                "min": 17.2,
+                "max": 26.1,
+                "days_45_median": 0.4,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 20.0,
+                "min": 15.0,
+                "max": 29.7,
+                "days_45_median": 0.3,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "rain": {
+          "applicable": true,
+          "metric": "rx1day_mm",
+          "unit": "mm/day",
+          "today": {
+            "value": 79.1,
+            "days_64_5": 1.1,
+            "rating": 3,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 80.4,
+                "min": 69.3,
+                "max": 100.1,
+                "days_64_5_median": 1.2,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 85.2,
+                "min": 80.8,
+                "max": 95.4,
+                "days_64_5_median": 1.27,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 89.7,
+                "min": 82.2,
+                "max": 98.5,
+                "days_64_5_median": 1.24,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 80.5,
+                "min": 68.2,
+                "max": 102.4,
+                "days_64_5_median": 1.21,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 86.7,
+                "min": 81.2,
+                "max": 99.2,
+                "days_64_5_median": 1.3,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 93.8,
+                "min": 83.3,
+                "max": 106.0,
+                "days_64_5_median": 1.29,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 80.7,
+                "min": 67.1,
+                "max": 104.7,
+                "days_64_5_median": 1.23,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 88.5,
+                "min": 81.7,
+                "max": 104.2,
+                "days_64_5_median": 1.35,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 99.5,
+                "min": 85.0,
+                "max": 116.4,
+                "days_64_5_median": 1.38,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "water": {
+          "applicable": true,
+          "metric": "aqueduct_bws_score",
+          "unit": "0-5 index",
+          "basin": "Cauvery / Vellar (Tamil Nadu)",
+          "decoupled_freshwater": false,
+          "today": {
+            "value": 4.35,
+            "rating": 5,
+            "label": "Modelled"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 4.42,
+                "min": 4.17,
+                "max": 4.67,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 4.47,
+                "min": 4.22,
+                "max": 4.72,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 4.52,
+                "min": 4.27,
+                "max": 4.77,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 4.58,
+                "min": 4.33,
+                "max": 4.83,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 4.69,
+                "min": 4.44,
+                "max": 4.94,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 4.8,
+                "min": 4.55,
+                "max": 5.0,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 4.68,
+                "min": 4.43,
+                "max": 4.93,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 4.81,
+                "min": 4.56,
+                "max": 5.0,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 4.95,
+                "min": 4.7,
+                "max": 5.0,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "river": {
+          "applicable": false,
+          "reason": "Not on a major river/canal intake (Groundwater); riverine flood module applies to P03 (Wardha), P06 (Mahanadi canal), and P09 (Damodar)."
+        },
+        "coastal": {
+          "applicable": false,
+          "reason": "Inland plant (coastal = N); coastal storm module applies only to coastal units P07 (Mundra) and P08 (Paradip)."
+        }
+      }
+    },
+    {
+      "id": "P06",
+      "name": "Nimbus Baloda Bazar Works",
+      "town": "Baloda Bazar",
+      "state": "Chhattisgarh",
+      "lat": 21.6566,
+      "lon": 82.1606,
+      "type": "Integrated",
+      "water_source": "Canal (Mahanadi system)",
+      "water_basin": "Middle Mahanadi (Chhattisgarh)",
+      "water_note": "Surface/utility intake (Canal (Mahanadi system)) \u2014 exposed to seasonal basin allocation and drought curtailment.",
+      "coastal": false,
+      "notes": "Newest kiln (2022); ships clinker to P08 (0.68 Mt) and P09 (0.60 Mt)",
+      "cmip6_source_note": "Direct Open-Meteo CMIP6 HighResMIP 4-model ensemble",
+      "denominators": {
+        "revenue_inr_cr": 1275.0,
+        "gross_block_inr_cr": 2350.0,
+        "output_mt": 2.55,
+        "people": 700,
+        "capacity_mtpa": 3.0,
+        "clinker_produced_mt": 3.01,
+        "clinker_shipped_mt": 1.28,
+        "scope1_co2_kt": 2470.0
+      },
+      "hazards": {
+        "heat": {
+          "applicable": true,
+          "metric": "days_tmax_ge_40",
+          "unit": "days/yr",
+          "today": {
+            "value": 43.4,
+            "days_45": 1.2,
+            "rating": 4,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 39.8,
+                "min": 34.9,
+                "max": 44.6,
+                "days_45_median": 0.5,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 41.8,
+                "min": 39.6,
+                "max": 47.0,
+                "days_45_median": 3.2,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 42.9,
+                "min": 42.0,
+                "max": 47.5,
+                "days_45_median": 4.1,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 39.5,
+                "min": 33.9,
+                "max": 44.8,
+                "days_45_median": 0.5,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 41.4,
+                "min": 38.7,
+                "max": 47.8,
+                "days_45_median": 3.6,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 42.6,
+                "min": 41.5,
+                "max": 49.0,
+                "days_45_median": 5.2,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 39.0,
+                "min": 33.0,
+                "max": 44.9,
+                "days_45_median": 0.5,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 40.9,
+                "min": 37.5,
+                "max": 48.9,
+                "days_45_median": 4.2,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 42.3,
+                "min": 40.8,
+                "max": 51.2,
+                "days_45_median": 6.8,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "rain": {
+          "applicable": true,
+          "metric": "rx1day_mm",
+          "unit": "mm/day",
+          "today": {
+            "value": 91.7,
+            "days_64_5": 1.65,
+            "rating": 3,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 99.8,
+                "min": 88.8,
+                "max": 159.8,
+                "days_64_5_median": 1.67,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 98.0,
+                "min": 90.7,
+                "max": 135.8,
+                "days_64_5_median": 1.73,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 93.4,
+                "min": 83.0,
+                "max": 113.4,
+                "days_64_5_median": 1.78,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 100.7,
+                "min": 88.5,
+                "max": 167.3,
+                "days_64_5_median": 1.67,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 99.6,
+                "min": 90.5,
+                "max": 145.9,
+                "days_64_5_median": 1.75,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 94.2,
+                "min": 79.6,
+                "max": 121.8,
+                "days_64_5_median": 1.83,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 101.6,
+                "min": 88.2,
+                "max": 174.8,
+                "days_64_5_median": 1.67,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 101.5,
+                "min": 90.2,
+                "max": 159.5,
+                "days_64_5_median": 1.77,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 95.1,
+                "min": 74.9,
+                "max": 133.5,
+                "days_64_5_median": 1.9,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "water": {
+          "applicable": true,
+          "metric": "aqueduct_bws_score",
+          "unit": "0-5 index",
+          "basin": "Middle Mahanadi (Chhattisgarh)",
+          "decoupled_freshwater": false,
+          "today": {
+            "value": 1.85,
+            "rating": 2,
+            "label": "Modelled"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 1.98,
+                "min": 1.73,
+                "max": 2.23,
+                "rating": 2,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 2.04,
+                "min": 1.79,
+                "max": 2.29,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 2.1,
+                "min": 1.85,
+                "max": 2.35,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 2.15,
+                "min": 1.9,
+                "max": 2.4,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 2.31,
+                "min": 2.06,
+                "max": 2.56,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 2.48,
+                "min": 2.23,
+                "max": 2.73,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 2.28,
+                "min": 2.03,
+                "max": 2.53,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 2.55,
+                "min": 2.3,
+                "max": 2.8,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 2.82,
+                "min": 2.57,
+                "max": 3.07,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "river": {
+          "applicable": true,
+          "metric": "q25_discharge_ratio",
+          "unit": "ratio vs baseline",
+          "today": {
+            "value": 1.0,
+            "q25_m3s": 224.4,
+            "mean_annual_peak_m3s": 154.5,
+            "rating": 3,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 1.09,
+                "min": 0.97,
+                "max": 1.74,
+                "q25_projected_m3s": 244.6,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 1.07,
+                "min": 0.99,
+                "max": 1.48,
+                "q25_projected_m3s": 240.1,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 1.02,
+                "min": 0.91,
+                "max": 1.24,
+                "q25_projected_m3s": 228.9,
+                "rating": 2,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 1.1,
+                "min": 0.97,
+                "max": 1.82,
+                "q25_projected_m3s": 246.8,
+                "rating": 4,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 1.09,
+                "min": 0.99,
+                "max": 1.59,
+                "q25_projected_m3s": 244.6,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 1.03,
+                "min": 0.9,
+                "max": 1.33,
+                "q25_projected_m3s": 231.1,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 1.11,
+                "min": 0.96,
+                "max": 1.91,
+                "q25_projected_m3s": 249.1,
+                "rating": 4,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 1.11,
+                "min": 0.98,
+                "max": 1.74,
+                "q25_projected_m3s": 249.1,
+                "rating": 4,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 1.04,
+                "min": 0.9,
+                "max": 1.46,
+                "q25_projected_m3s": 233.4,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "coastal": {
+          "applicable": false,
+          "reason": "Inland plant (coastal = N); coastal storm module applies only to coastal units P07 (Mundra) and P08 (Paradip)."
+        }
+      }
+    },
+    {
+      "id": "P07",
+      "name": "Nimbus Mundra Grinding Unit",
+      "town": "Mundra",
+      "state": "Gujarat",
+      "lat": 22.839,
+      "lon": 69.7219,
+      "type": "Grinding unit",
+      "water_source": "Desalinated seawater",
+      "water_basin": "Kutch Coastal (Gujarat)",
+      "water_note": "Basin is Extremely High stress (Kutch), but P07 uses desalinated seawater \u2014 freshwater basin stress is decoupled; risk shifts to coastal intake & energy dependence.",
+      "coastal": true,
+      "notes": "Gets 1.12 Mt clinker a year from P01 by rail",
+      "cmip6_source_note": "Direct Open-Meteo CMIP6 HighResMIP 4-model ensemble",
+      "denominators": {
+        "revenue_inr_cr": 848.0,
+        "gross_block_inr_cr": 650.0,
+        "output_mt": 1.6,
+        "people": 210,
+        "capacity_mtpa": 2.0,
+        "clinker_produced_mt": 0.0,
+        "clinker_shipped_mt": 0.0,
+        "scope1_co2_kt": 32.0
+      },
+      "hazards": {
+        "heat": {
+          "applicable": true,
+          "metric": "days_tmax_ge_40",
+          "unit": "days/yr",
+          "today": {
+            "value": 2.6,
+            "days_45": 0.0,
+            "rating": 2,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 2.5,
+                "min": 1.5,
+                "max": 3.9,
+                "days_45_median": 0.2,
+                "rating": 2,
+                "rating_range": [
+                  1,
+                  2
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 4.5,
+                "min": 3.4,
+                "max": 5.3,
+                "days_45_median": 0.2,
+                "rating": 2,
+                "rating_range": [
+                  2,
+                  2
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 6.2,
+                "min": 3.4,
+                "max": 7.5,
+                "days_45_median": 0.1,
+                "rating": 2,
+                "rating_range": [
+                  2,
+                  2
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 2.5,
+                "min": 1.4,
+                "max": 4.1,
+                "days_45_median": 0.2,
+                "rating": 2,
+                "rating_range": [
+                  1,
+                  2
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 4.8,
+                "min": 3.6,
+                "max": 5.9,
+                "days_45_median": 0.2,
+                "rating": 2,
+                "rating_range": [
+                  2,
+                  2
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 7.6,
+                "min": 3.7,
+                "max": 9.4,
+                "days_45_median": 0.1,
+                "rating": 2,
+                "rating_range": [
+                  2,
+                  2
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 2.5,
+                "min": 1.3,
+                "max": 4.2,
+                "days_45_median": 0.2,
+                "rating": 2,
+                "rating_range": [
+                  1,
+                  2
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 5.4,
+                "min": 3.9,
+                "max": 6.7,
+                "days_45_median": 0.2,
+                "rating": 2,
+                "rating_range": [
+                  2,
+                  2
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 9.6,
+                "min": 4.1,
+                "max": 12.1,
+                "days_45_median": 0.1,
+                "rating": 2,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "rain": {
+          "applicable": true,
+          "metric": "rx1day_mm",
+          "unit": "mm/day",
+          "today": {
+            "value": 122.3,
+            "days_64_5": 1.75,
+            "rating": 4,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 129.8,
+                "min": 123.0,
+                "max": 135.7,
+                "days_64_5_median": 1.92,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 129.7,
+                "min": 124.0,
+                "max": 134.6,
+                "days_64_5_median": 1.95,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 127.3,
+                "min": 115.6,
+                "max": 145.2,
+                "days_64_5_median": 1.85,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 130.7,
+                "min": 123.0,
+                "max": 137.1,
+                "days_64_5_median": 1.93,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 131.3,
+                "min": 124.4,
+                "max": 137.4,
+                "days_64_5_median": 2.0,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 129.2,
+                "min": 113.1,
+                "max": 154.1,
+                "days_64_5_median": 1.89,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 131.5,
+                "min": 123.1,
+                "max": 138.6,
+                "days_64_5_median": 1.95,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 133.6,
+                "min": 124.9,
+                "max": 141.2,
+                "days_64_5_median": 2.06,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 132.0,
+                "min": 109.5,
+                "max": 166.4,
+                "days_64_5_median": 1.94,
+                "rating": 5,
+                "rating_range": [
+                  4,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "water": {
+          "applicable": true,
+          "metric": "aqueduct_bws_score",
+          "unit": "0-5 index",
+          "basin": "Kutch Coastal (Gujarat)",
+          "decoupled_freshwater": true,
+          "today": {
+            "value": 4.62,
+            "rating": 5,
+            "label": "Modelled"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 4.7,
+                "min": 4.45,
+                "max": 4.95,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 4.74,
+                "min": 4.49,
+                "max": 4.99,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 4.78,
+                "min": 4.53,
+                "max": 5.0,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 4.78,
+                "min": 4.53,
+                "max": 5.0,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 4.85,
+                "min": 4.6,
+                "max": 5.0,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 4.92,
+                "min": 4.67,
+                "max": 5.0,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 4.85,
+                "min": 4.6,
+                "max": 5.0,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 4.92,
+                "min": 4.67,
+                "max": 5.0,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 5.0,
+                "min": 4.75,
+                "max": 5.0,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "river": {
+          "applicable": false,
+          "reason": "Not on a major river/canal intake (Desalinated seawater); riverine flood module applies to P03 (Wardha), P06 (Mahanadi canal), and P09 (Damodar)."
+        },
+        "coastal": {
+          "applicable": true,
+          "metric": "cyclone_tracks_200km_per_decade",
+          "unit": "storms/decade",
+          "today": {
+            "value": 5.3,
+            "total_1980_2024": 24,
+            "severe_1980_2024": 6,
+            "severe_per_decade": 1.3,
+            "rating": 4,
+            "label": "Real"
+          },
+          "future_note": "Historical cyclone track frequency only (1980\u20132024 within 200 km). Future cyclone frequency is not projected (disclosed per Assumption A10).",
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 5.3,
+                "min": 5.3,
+                "max": 5.3,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Real"
+              },
+              "2040": {
+                "median": 5.3,
+                "min": 5.3,
+                "max": 5.3,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Real"
+              },
+              "2050": {
+                "median": 5.3,
+                "min": 5.3,
+                "max": 5.3,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Real"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 5.3,
+                "min": 5.3,
+                "max": 5.3,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Real"
+              },
+              "2040": {
+                "median": 5.3,
+                "min": 5.3,
+                "max": 5.3,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Real"
+              },
+              "2050": {
+                "median": 5.3,
+                "min": 5.3,
+                "max": 5.3,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Real"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 5.3,
+                "min": 5.3,
+                "max": 5.3,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Real"
+              },
+              "2040": {
+                "median": 5.3,
+                "min": 5.3,
+                "max": 5.3,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Real"
+              },
+              "2050": {
+                "median": 5.3,
+                "min": 5.3,
+                "max": 5.3,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Real"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "P08",
+      "name": "Nimbus Paradip Grinding Unit",
+      "town": "Paradip",
+      "state": "Odisha",
+      "lat": 20.3165,
+      "lon": 86.6114,
+      "type": "Grinding unit",
+      "water_source": "Municipal supply",
+      "water_basin": "Mahanadi Delta (Odisha)",
+      "water_note": "Surface/utility intake (Municipal supply) \u2014 exposed to seasonal basin allocation and drought curtailment.",
+      "coastal": true,
+      "notes": "Gets 0.68 Mt clinker a year from P06; blends fly ash from nearby power plants",
+      "cmip6_source_note": "Direct Open-Meteo CMIP6 HighResMIP 4-model ensemble",
+      "denominators": {
+        "revenue_inr_cr": 536.0,
+        "gross_block_inr_cr": 480.0,
+        "output_mt": 1.05,
+        "people": 180,
+        "capacity_mtpa": 1.5,
+        "clinker_produced_mt": 0.0,
+        "clinker_shipped_mt": 0.0,
+        "scope1_co2_kt": 21.0
+      },
+      "hazards": {
+        "heat": {
+          "applicable": true,
+          "metric": "days_tmax_ge_40",
+          "unit": "days/yr",
+          "today": {
+            "value": 0.3,
+            "days_45": 0.0,
+            "rating": 1,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 0.1,
+                "min": 0.0,
+                "max": 1.1,
+                "days_45_median": 0.0,
+                "rating": 1,
+                "rating_range": [
+                  1,
+                  1
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 0.7,
+                "min": 0.3,
+                "max": 1.3,
+                "days_45_median": 0.0,
+                "rating": 1,
+                "rating_range": [
+                  1,
+                  1
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 1.1,
+                "min": 0.3,
+                "max": 1.6,
+                "days_45_median": 0.0,
+                "rating": 1,
+                "rating_range": [
+                  1,
+                  1
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 0.1,
+                "min": 0.0,
+                "max": 1.2,
+                "days_45_median": 0.0,
+                "rating": 1,
+                "rating_range": [
+                  1,
+                  1
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 0.8,
+                "min": 0.3,
+                "max": 1.5,
+                "days_45_median": 0.0,
+                "rating": 1,
+                "rating_range": [
+                  1,
+                  1
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 1.4,
+                "min": 0.3,
+                "max": 2.1,
+                "days_45_median": 0.0,
+                "rating": 1,
+                "rating_range": [
+                  1,
+                  2
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 0.1,
+                "min": 0.0,
+                "max": 1.3,
+                "days_45_median": 0.0,
+                "rating": 1,
+                "rating_range": [
+                  1,
+                  1
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 0.8,
+                "min": 0.3,
+                "max": 1.8,
+                "days_45_median": 0.0,
+                "rating": 1,
+                "rating_range": [
+                  1,
+                  1
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 1.9,
+                "min": 0.3,
+                "max": 2.8,
+                "days_45_median": 0.0,
+                "rating": 1,
+                "rating_range": [
+                  1,
+                  2
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "rain": {
+          "applicable": true,
+          "metric": "rx1day_mm",
+          "unit": "mm/day",
+          "today": {
+            "value": 107.6,
+            "days_64_5": 2.15,
+            "rating": 4,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 107.7,
+                "min": 86.7,
+                "max": 117.2,
+                "days_64_5_median": 2.0,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 105.4,
+                "min": 69.6,
+                "max": 118.3,
+                "days_64_5_median": 1.89,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 105.0,
+                "min": 72.5,
+                "max": 118.2,
+                "days_64_5_median": 2.03,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 107.8,
+                "min": 84.4,
+                "max": 118.2,
+                "days_64_5_median": 1.99,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 104.9,
+                "min": 60.9,
+                "max": 120.7,
+                "days_64_5_median": 1.83,
+                "rating": 4,
+                "rating_range": [
+                  2,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 104.0,
+                "min": 59.0,
+                "max": 122.2,
+                "days_64_5_median": 1.98,
+                "rating": 4,
+                "rating_range": [
+                  2,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 107.8,
+                "min": 82.1,
+                "max": 119.3,
+                "days_64_5_median": 1.97,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 104.2,
+                "min": 49.2,
+                "max": 124.0,
+                "days_64_5_median": 1.75,
+                "rating": 4,
+                "rating_range": [
+                  2,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 102.6,
+                "min": 40.1,
+                "max": 127.9,
+                "days_64_5_median": 1.92,
+                "rating": 4,
+                "rating_range": [
+                  1,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "water": {
+          "applicable": true,
+          "metric": "aqueduct_bws_score",
+          "unit": "0-5 index",
+          "basin": "Mahanadi Delta (Odisha)",
+          "decoupled_freshwater": false,
+          "today": {
+            "value": 1.68,
+            "rating": 2,
+            "label": "Modelled"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 1.8,
+                "min": 1.55,
+                "max": 2.05,
+                "rating": 2,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 1.86,
+                "min": 1.61,
+                "max": 2.11,
+                "rating": 2,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 1.92,
+                "min": 1.67,
+                "max": 2.17,
+                "rating": 2,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 1.96,
+                "min": 1.71,
+                "max": 2.21,
+                "rating": 2,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 2.12,
+                "min": 1.87,
+                "max": 2.37,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 2.28,
+                "min": 2.03,
+                "max": 2.53,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 2.1,
+                "min": 1.85,
+                "max": 2.35,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 2.34,
+                "min": 2.09,
+                "max": 2.59,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 2.58,
+                "min": 2.33,
+                "max": 2.83,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "river": {
+          "applicable": false,
+          "reason": "Not on a major river/canal intake (Municipal supply); riverine flood module applies to P03 (Wardha), P06 (Mahanadi canal), and P09 (Damodar)."
+        },
+        "coastal": {
+          "applicable": true,
+          "metric": "cyclone_tracks_200km_per_decade",
+          "unit": "storms/decade",
+          "today": {
+            "value": 22.4,
+            "total_1980_2024": 101,
+            "severe_1980_2024": 19,
+            "severe_per_decade": 4.2,
+            "rating": 5,
+            "label": "Real"
+          },
+          "future_note": "Historical cyclone track frequency only (1980\u20132024 within 200 km). Future cyclone frequency is not projected (disclosed per Assumption A10).",
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 22.4,
+                "min": 22.4,
+                "max": 22.4,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Real"
+              },
+              "2040": {
+                "median": 22.4,
+                "min": 22.4,
+                "max": 22.4,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Real"
+              },
+              "2050": {
+                "median": 22.4,
+                "min": 22.4,
+                "max": 22.4,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Real"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 22.4,
+                "min": 22.4,
+                "max": 22.4,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Real"
+              },
+              "2040": {
+                "median": 22.4,
+                "min": 22.4,
+                "max": 22.4,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Real"
+              },
+              "2050": {
+                "median": 22.4,
+                "min": 22.4,
+                "max": 22.4,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Real"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 22.4,
+                "min": 22.4,
+                "max": 22.4,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Real"
+              },
+              "2040": {
+                "median": 22.4,
+                "min": 22.4,
+                "max": 22.4,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Real"
+              },
+              "2050": {
+                "median": 22.4,
+                "min": 22.4,
+                "max": 22.4,
+                "rating": 5,
+                "rating_range": [
+                  5,
+                  5
+                ],
+                "label": "Real"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "P09",
+      "name": "Nimbus Durgapur Grinding Unit",
+      "town": "Durgapur",
+      "state": "West Bengal",
+      "lat": 23.5204,
+      "lon": 87.3119,
+      "type": "Grinding unit",
+      "water_source": "River (Damodar)",
+      "water_basin": "Damodar / Lower Ganga (West Bengal)",
+      "water_note": "Surface/utility intake (River (Damodar)) \u2014 exposed to seasonal basin allocation and drought curtailment.",
+      "coastal": false,
+      "notes": "Gets 0.60 Mt clinker a year from P06; makes slag cement with steel slag",
+      "cmip6_source_note": "Direct Open-Meteo CMIP6 HighResMIP 4-model ensemble",
+      "denominators": {
+        "revenue_inr_cr": 624.0,
+        "gross_block_inr_cr": 470.0,
+        "output_mt": 1.2,
+        "people": 170,
+        "capacity_mtpa": 1.5,
+        "clinker_produced_mt": 0.0,
+        "clinker_shipped_mt": 0.0,
+        "scope1_co2_kt": 24.0
+      },
+      "hazards": {
+        "heat": {
+          "applicable": true,
+          "metric": "days_tmax_ge_40",
+          "unit": "days/yr",
+          "today": {
+            "value": 11.9,
+            "days_45": 0.0,
+            "rating": 3,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 7.5,
+                "min": 6.7,
+                "max": 18.8,
+                "days_45_median": 0.0,
+                "rating": 2,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 11.1,
+                "min": 8.6,
+                "max": 19.7,
+                "days_45_median": 0.5,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 13.1,
+                "min": 8.1,
+                "max": 17.4,
+                "days_45_median": 1.0,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 7.1,
+                "min": 6.2,
+                "max": 19.5,
+                "days_45_median": 0.0,
+                "rating": 2,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 10.8,
+                "min": 7.8,
+                "max": 21.5,
+                "days_45_median": 0.6,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 13.6,
+                "min": 6.6,
+                "max": 19.5,
+                "days_45_median": 1.4,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 6.7,
+                "min": 5.6,
+                "max": 20.3,
+                "days_45_median": 0.0,
+                "rating": 2,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 10.6,
+                "min": 6.8,
+                "max": 23.9,
+                "days_45_median": 0.7,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 14.3,
+                "min": 4.6,
+                "max": 22.4,
+                "days_45_median": 1.9,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  3
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "rain": {
+          "applicable": true,
+          "metric": "rx1day_mm",
+          "unit": "mm/day",
+          "today": {
+            "value": 72.5,
+            "days_64_5": 0.95,
+            "rating": 3,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 76.1,
+                "min": 72.8,
+                "max": 79.9,
+                "days_64_5_median": 0.99,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 78.2,
+                "min": 54.8,
+                "max": 98.6,
+                "days_64_5_median": 1.05,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 79.4,
+                "min": 44.2,
+                "max": 118.7,
+                "days_64_5_median": 1.04,
+                "rating": 3,
+                "rating_range": [
+                  1,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 76.4,
+                "min": 72.9,
+                "max": 80.7,
+                "days_64_5_median": 1.0,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 79.5,
+                "min": 50.7,
+                "max": 104.7,
+                "days_64_5_median": 1.07,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 82.0,
+                "min": 33.3,
+                "max": 136.5,
+                "days_64_5_median": 1.08,
+                "rating": 3,
+                "rating_range": [
+                  1,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 76.8,
+                "min": 72.9,
+                "max": 81.5,
+                "days_64_5_median": 1.0,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 81.2,
+                "min": 45.2,
+                "max": 112.7,
+                "days_64_5_median": 1.1,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 85.8,
+                "min": 18.0,
+                "max": 161.4,
+                "days_64_5_median": 1.13,
+                "rating": 3,
+                "rating_range": [
+                  1,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "water": {
+          "applicable": true,
+          "metric": "aqueduct_bws_score",
+          "unit": "0-5 index",
+          "basin": "Damodar / Lower Ganga (West Bengal)",
+          "decoupled_freshwater": false,
+          "today": {
+            "value": 2.62,
+            "rating": 3,
+            "label": "Modelled"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 2.74,
+                "min": 2.49,
+                "max": 2.99,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  3
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 2.8,
+                "min": 2.55,
+                "max": 3.05,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 2.86,
+                "min": 2.61,
+                "max": 3.11,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 2.92,
+                "min": 2.67,
+                "max": 3.17,
+                "rating": 3,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 3.08,
+                "min": 2.83,
+                "max": 3.33,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 3.24,
+                "min": 2.99,
+                "max": 3.49,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 3.06,
+                "min": 2.81,
+                "max": 3.31,
+                "rating": 4,
+                "rating_range": [
+                  3,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 3.3,
+                "min": 3.05,
+                "max": 3.55,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Assumption"
+              },
+              "2050": {
+                "median": 3.54,
+                "min": 3.29,
+                "max": 3.79,
+                "rating": 4,
+                "rating_range": [
+                  4,
+                  4
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "river": {
+          "applicable": true,
+          "metric": "q25_discharge_ratio",
+          "unit": "ratio vs baseline",
+          "today": {
+            "value": 1.0,
+            "q25_m3s": 35.0,
+            "mean_annual_peak_m3s": 17.4,
+            "rating": 2,
+            "label": "Real"
+          },
+          "scenarios": {
+            "ssp126": {
+              "2030": {
+                "median": 1.05,
+                "min": 1.0,
+                "max": 1.1,
+                "q25_projected_m3s": 36.8,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 1.08,
+                "min": 0.9,
+                "max": 1.36,
+                "q25_projected_m3s": 37.8,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 1.1,
+                "min": 0.9,
+                "max": 1.64,
+                "q25_projected_m3s": 38.5,
+                "rating": 4,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp245": {
+              "2030": {
+                "median": 1.05,
+                "min": 1.01,
+                "max": 1.11,
+                "q25_projected_m3s": 36.8,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 1.1,
+                "min": 0.9,
+                "max": 1.44,
+                "q25_projected_m3s": 38.5,
+                "rating": 4,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 1.13,
+                "min": 0.9,
+                "max": 1.88,
+                "q25_projected_m3s": 39.5,
+                "rating": 4,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            },
+            "ssp585": {
+              "2030": {
+                "median": 1.06,
+                "min": 1.01,
+                "max": 1.12,
+                "q25_projected_m3s": 37.1,
+                "rating": 3,
+                "rating_range": [
+                  2,
+                  4
+                ],
+                "label": "Modelled"
+              },
+              "2040": {
+                "median": 1.12,
+                "min": 0.9,
+                "max": 1.55,
+                "q25_projected_m3s": 39.2,
+                "rating": 4,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              },
+              "2050": {
+                "median": 1.18,
+                "min": 0.9,
+                "max": 2.23,
+                "q25_projected_m3s": 41.3,
+                "rating": 4,
+                "rating_range": [
+                  2,
+                  5
+                ],
+                "label": "Modelled"
+              }
+            }
+          }
+        },
+        "coastal": {
+          "applicable": false,
+          "reason": "Inland plant (coastal = N); coastal storm module applies only to coastal units P07 (Mundra) and P08 (Paradip)."
+        }
+      }
+    }
+  ],
+  "flows": [
+    {
+      "id": "F1",
+      "from": "P01",
+      "to": "P07",
+      "commodity": "clinker",
+      "mt": 1.12,
+      "mode": "Rail",
+      "share_of_kiln_clinker_pct": 32.7,
+      "label": "Real"
+    },
+    {
+      "id": "F2",
+      "from": "P06",
+      "to": "P08",
+      "commodity": "clinker",
+      "mt": 0.68,
+      "mode": "Rail / Road",
+      "share_of_kiln_clinker_pct": 22.6,
+      "label": "Real"
+    },
+    {
+      "id": "F3",
+      "from": "P06",
+      "to": "P09",
+      "commodity": "clinker",
+      "mt": 0.6,
+      "mode": "Rail / Road",
+      "share_of_kiln_clinker_pct": 19.9,
+      "label": "Real"
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "A1",
+      "text": "Plant coordinates represent town centroids for each facility.",
+      "value": "9 lat/lon pairs from CSV",
+      "owner": "Head of Sustainability",
+      "status": "Accepted"
+    },
+    {
+      "id": "A2",
+      "text": "'Today' = observed ERA5 2005\u20132024; future windows = 2021\u20132040 (2030), 2031\u20132050 (2040), 2041\u20132050 (2050).",
+      "value": "20-yr rolling windows (10-yr for 2050)",
+      "owner": "Climate Risk Analyst",
+      "status": "Accepted"
+    },
+    {
+      "id": "A3",
+      "text": "Five-band rating thresholds calibrated once after initial data pull (Heat: <2/10/30/60 days \u226540\u00b0C; Rain Rx1day: <45/64.5/95/124.5 mm; Water: Aqueduct 0\u20135 bands; Cyclone: <1/2.5/5/8 per decade).",
+      "value": "Fixed v1.0 bands (testable in Challenge Mode)",
+      "owner": "Head of Sustainability",
+      "status": "Accepted"
+    },
+    {
+      "id": "A4",
+      "text": "'High exposure' means rated High (4) or Very High (5) using ensemble median.",
+      "value": "Rating \u2265 4",
+      "owner": "Head of Sustainability",
+      "status": "Accepted"
+    },
+    {
+      "id": "A5",
+      "text": "WRI Aqueduct 4.0 2040 water stress is linearly interpolated between published 2030 and 2050 projections.",
+      "value": "(2030 + 2050) / 2",
+      "owner": "Climate Risk Analyst",
+      "status": "Proposed"
+    },
+    {
+      "id": "A6",
+      "text": "Clinker dependencies extracted from CSV notes: P01\u2192P07 (1.12 Mt), P06\u2192P08 (0.68 Mt), P06\u2192P09 (0.60 Mt).",
+      "value": "3 structured flows (2.40 Mt total)",
+      "owner": "Operations / Supply Chain",
+      "status": "Verified"
+    },
+    {
+      "id": "A7",
+      "text": "Outage what-if defaults: 30-day kiln outage, 0 days stock buffer, 0% bought-in clinker replacement (gross exposure).",
+      "value": "D=30d, B=0d, R=0%",
+      "owner": "Head of Sustainability",
+      "status": "Proposed"
+    },
+    {
+      "id": "A8",
+      "text": "FY 2025-26 revenue (\u20b99,658 cr) is a proxy for business exposure, not modelled financial loss or EBITDA impact.",
+      "value": "FY 2025-26 (Apr\u2013Mar) static baseline",
+      "owner": "CFO / Audit Committee",
+      "status": "Accepted"
+    },
+    {
+      "id": "A9",
+      "text": "No site-level adaptation measures (e.g., flood walls, cooling upgrades) are credited in v1 baseline ratings; P07 desalination is noted qualitatively.",
+      "value": "Unmitigated hazard exposure",
+      "owner": "Head of Sustainability",
+      "status": "Accepted"
+    },
+    {
+      "id": "A10",
+      "text": "Coastal storm frequency uses historical NOAA IBTrACS tracks (1980\u20132024 within 200 km); future cyclone frequency is not projected.",
+      "value": "Historical frequency held constant",
+      "owner": "Climate Risk Analyst",
+      "status": "Accepted"
+    },
+    {
+      "id": "A11",
+      "text": "Open-Meteo HighResMIP provides a high-emission pathway; SSP2-4.5 and SSP1-2.6 deltas are scaled using IPCC AR6 South Asia warming ratios. All 9 plants use direct Open-Meteo CMIP6 HighResMIP 4-model pulls.",
+      "value": "2040 ratios: SSP2-4.5=0.80x, SSP1-2.6=0.65x",
+      "owner": "Climate Risk Analyst",
+      "status": "Proposed"
+    }
+  ]
+}
