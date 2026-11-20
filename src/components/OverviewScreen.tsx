@@ -27,7 +27,6 @@ import type {
   EvaluatedPlant,
   HazardKey,
   HorizonKey,
-  LensKey,
   ScenarioKey,
   ThresholdConfig,
 } from "@/lib/types";
@@ -49,7 +48,6 @@ interface OverviewScreenProps {
   scenario: ScenarioKey;
   horizon: HorizonKey;
   denominator: DenominatorKey;
-  lens: LensKey;
   thresholds: ThresholdConfig;
   evaluated: EvaluatedPlant[];
   onSelectPlant: (plantId: string) => void;
@@ -70,7 +68,6 @@ export function OverviewScreen({
   scenario,
   horizon,
   denominator,
-  lens,
   thresholds,
   evaluated,
   onSelectPlant,
@@ -131,11 +128,7 @@ export function OverviewScreen({
         <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <span className="rounded-md bg-slate-900 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-white dark:bg-slate-100 dark:text-slate-900">
-              {lens === "board"
-                ? "Board Headline"
-                : lens === "auditor"
-                ? "Auditor Traceable Summary"
-                : "Investor Disclosure Summary"}
+              Board Headline
             </span>
             <ProvenanceChip
               label={horizon === "today" ? "Real" : "Modelled"}
@@ -492,44 +485,47 @@ export function OverviewScreen({
             </div>
           </div>
 
-          {/* Investor Disclosure Matrix (highlighted in Investor Lens, visible as quick reference) */}
-          {lens === "investor" && (
-            <div className="rounded-xl border border-indigo-200 bg-indigo-50/40 p-4 dark:border-indigo-900 dark:bg-indigo-950/20">
-              <div className="mb-2 flex items-center justify-between">
-                <h3 className="text-sm font-semibold text-indigo-950 dark:text-indigo-100">
-                  Investor Disclosure Matrix — % in High Exposure ({HORIZON_META[horizon].label})
+          {/* Cross-Scenario Disclosure Matrix (SEBI BRSR / IFRS S2 aligned) */}
+          <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="mb-2 flex items-center justify-between">
+              <div>
+                <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                  Cross-Scenario Disclosure Matrix — % in High Exposure ({HORIZON_META[horizon].label})
                 </h3>
-                <ProvenanceChip label="Modelled" />
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  SEBI BRSR / IFRS S2 aligned physical exposure across climate pathways
+                </p>
               </div>
-              <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs">
-                  <thead>
-                    <tr className="border-b border-indigo-200 text-indigo-900 dark:border-indigo-800 dark:text-indigo-200">
-                      <th className="py-1.5 pr-3 font-semibold">Scenario</th>
-                      <th className="py-1.5 px-2 text-right font-semibold">Revenue</th>
-                      <th className="py-1.5 px-2 text-right font-semibold">Gross Block</th>
-                      <th className="py-1.5 px-2 text-right font-semibold">Output</th>
-                      <th className="py-1.5 pl-2 text-right font-semibold">Workforce</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-indigo-100 tabular-nums dark:divide-indigo-900/50">
-                    {investorRows.map((row) => (
-                      <tr key={row.scenario}>
-                        <td className="py-1.5 pr-3 font-medium">{row.scenario}</td>
-                        <td className="py-1.5 px-2 text-right font-semibold">{row.revPct}%</td>
-                        <td className="py-1.5 px-2 text-right">{row.gbPct}%</td>
-                        <td className="py-1.5 px-2 text-right">{row.outPct}%</td>
-                        <td className="py-1.5 pl-2 text-right">{row.pplPct}%</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p className="mt-2.5 border-t border-indigo-200/70 pt-2 text-[11px] text-indigo-900/90 dark:border-indigo-800/60 dark:text-indigo-200/80">
-                <strong>Disclosure Alignment:</strong> Reporting boundary = Standalone (6 Integrated Kilns + 3 Grinding Units, FY 2025-26). Maps directly to <strong>SEBI BRSR Section A (Q24 Material Issues) &amp; Principle 6</strong>, <strong>TCFD Metrics &amp; Targets</strong>, and <strong>IFRS S2 Para 29(b)</strong> (% of assets/revenue vulnerable to physical risk).
-              </p>
+              <ProvenanceChip label="Modelled" />
             </div>
-          )}
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-xs">
+                <thead>
+                  <tr className="border-b border-slate-200 text-slate-700 dark:border-slate-700 dark:text-slate-300">
+                    <th className="py-1.5 pr-3 font-semibold">Scenario</th>
+                    <th className="py-1.5 px-2 text-right font-semibold">Revenue</th>
+                    <th className="py-1.5 px-2 text-right font-semibold">Gross Block</th>
+                    <th className="py-1.5 px-2 text-right font-semibold">Output</th>
+                    <th className="py-1.5 pl-2 text-right font-semibold">Workforce</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 tabular-nums dark:divide-slate-800">
+                  {investorRows.map((row) => (
+                    <tr key={row.scenario}>
+                      <td className="py-1.5 pr-3 font-medium text-slate-800 dark:text-slate-200">{row.scenario}</td>
+                      <td className="py-1.5 px-2 text-right font-semibold text-teal-700 dark:text-teal-400">{row.revPct}%</td>
+                      <td className="py-1.5 px-2 text-right text-slate-600 dark:text-slate-400">{row.gbPct}%</td>
+                      <td className="py-1.5 px-2 text-right text-slate-600 dark:text-slate-400">{row.outPct}%</td>
+                      <td className="py-1.5 pl-2 text-right text-slate-600 dark:text-slate-400">{row.pplPct}%</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-2.5 border-t border-slate-100 pt-2 text-[11px] text-slate-500 dark:border-slate-800 dark:text-slate-400">
+              <strong>Disclosure Alignment:</strong> Reporting boundary = Standalone (6 Integrated Kilns + 3 Grinding Units, FY 2025-26). Maps directly to <strong>SEBI BRSR Section A (Q24 Material Issues) &amp; Principle 6</strong>, <strong>TCFD Metrics &amp; Targets</strong>, and <strong>IFRS S2 Para 29(b)</strong> (% of assets/revenue vulnerable to physical risk).
+            </p>
+          </div>
 
           {/* Honest Scope Box — "What this does not cover" */}
           <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-4 dark:border-slate-800 dark:bg-slate-900/60">

@@ -17,7 +17,6 @@ import type {
   DenominatorKey,
   HorizonKey,
   LedgerResults,
-  LensKey,
   ProvenanceData,
   ScenarioKey,
   ScreenKey,
@@ -81,7 +80,6 @@ export default function NimbusExposureLedgerApp() {
   const [scenario, setScenario] = useState<ScenarioKey>("ssp245");
   const [horizon, setHorizon] = useState<HorizonKey>("2040");
   const [denominator, setDenominator] = useState<DenominatorKey>("revenue_inr_cr");
-  const [lens, setLens] = useState<LensKey>("board");
   const [selectedPlantId, setSelectedPlantId] = useState<string>("P01");
   const [thresholds, setThresholds] = useState<ThresholdConfig>({
     ...defaultLedgerData.meta.default_thresholds,
@@ -278,26 +276,6 @@ export default function NimbusExposureLedgerApp() {
                 ))}
               </div>
             </div>
-
-            <div className="ml-auto flex items-center gap-1.5">
-              <span className="text-[11px] font-medium text-slate-500">Lens:</span>
-              <div className="inline-flex rounded-md border border-slate-200 bg-slate-50 p-0.5 dark:border-slate-700 dark:bg-slate-900">
-                {(["board", "auditor", "investor"] as LensKey[]).map((l) => (
-                  <button
-                    key={l}
-                    type="button"
-                    onClick={() => setLens(l)}
-                    className={`rounded px-2 py-0.5 text-[11px] font-semibold capitalize transition ${
-                      lens === l
-                        ? "bg-teal-700 text-white dark:bg-teal-400 dark:text-slate-900"
-                        : "text-slate-600 hover:text-slate-900 dark:text-slate-400"
-                    }`}
-                  >
-                    {l}
-                  </button>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </header>
@@ -308,7 +286,6 @@ export default function NimbusExposureLedgerApp() {
             scenario={scenario}
             horizon={horizon}
             denominator={denominator}
-            lens={lens}
             thresholds={thresholds}
             evaluated={evaluated}
             onSelectPlant={handleSelectPlant}
