@@ -32,24 +32,6 @@ All climate data is fetched at build time into `src/data/results.json` and `src/
 - **Next.js 15 (App Router)** + **TypeScript** + **Tailwind CSS** + **Recharts** + **Lucide React**
 - Static prerendered output — deploys to **Vercel** with zero login and zero environment variables.
 
-## Running Locally
-```bash
-npm install
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000).
-
-## Production Build & Vercel Deployment
-```bash
-npm run build
-```
-To deploy on Vercel, import this directory (`nimbus-exposure-ledger`) directly into Vercel or run `npx vercel --prod` — no API keys or environment variables are required.
-
-## Re-running the Data Pipeline
-```bash
-python3 scripts/fetch_climate_data.py
-python3 scripts/finalize_data.py
-```
 
 ## Golden Test Benchmarks
 - **Group totals:** `23.0 MTPA` capacity · `18.35 Mt` output · `₹15,450 cr` gross block · `₹9,658 cr` revenue · `4,550` people · `10,932 kt` Scope 1 CO₂
